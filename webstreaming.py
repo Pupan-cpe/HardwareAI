@@ -3,7 +3,7 @@
 
 # import the necessary packages
 import  parinya
-from pyimagesearch.motion_detection import SingleMotionDetector
+from pupan.motion_detection import SingleMotionDetector
 from imutils.video import VideoStream
 from flask import Response
 from flask import Flask
@@ -71,7 +71,7 @@ cors = CORS(app, resources={
 # initialize the video stream and allow the camera sensor to
 # warmup
 #vs = VideoStream(usePiCamera=1).start()
-vs = VideoStream(src=-1).start()
+vs = VideoStream(src=0).start()
 
 
 time.sleep(2.0)
