@@ -151,24 +151,24 @@ def detect_motion(frameCount):
         frame = imutils.resize(frame, width=500)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (7, 7), 0)
-        yolo.detect(frame, draw=False)
-        yolo.detect(frame)
-        obj = yolo.detect(frame, draw=False)
-        for A in obj:
-            labal, left, top, width , height = A
-            if (labal[0]=='p' and labal[3] == "s"):
-                print(labal)
-                time.sleep(5)
-                line.sendimage(frame[:, :, ::-1])
-                date1= str(datetime.datetime.now())
-                cv2.imwrite('/var/www/html/image/'+str(date1)+'.png', frame)
-                # cv2.imwrite('/var/www/html/image/'+str(date1)+'.png', outputFrame)
-                with open('/var/www/html/image/'+str(date1)+'.png', 'rb') as binary_file:
-                    binary_file_data = binary_file.read()
-                global base64_message
-                base64_encoded_data = base64.b64encode(binary_file_data)
-                base64_message = base64_encoded_data.decode('utf-8')
-                print(base64_message)
+#         yolo.detect(frame, draw=False)
+#         yolo.detect(frame)
+#         obj = yolo.detect(frame, draw=False)
+#         for A in obj:
+#             labal, left, top, width , height = A
+#             if (labal[0]=='p' and labal[3] == "s"):
+#                 print(labal)
+#                 time.sleep(5)
+#                 line.sendimage(frame[:, :, ::-1])
+#                 date1= str(datetime.datetime.now())
+#                 cv2.imwrite('/var/www/html/image/'+str(date1)+'.png', frame)
+#                 # cv2.imwrite('/var/www/html/image/'+str(date1)+'.png', outputFrame)
+#                 with open('/var/www/html/image/'+str(date1)+'.png', 'rb') as binary_file:
+#                     binary_file_data = binary_file.read()
+#                 global base64_message
+#                 base64_encoded_data = base64.b64encode(binary_file_data)
+#                 base64_message = base64_encoded_data.decode('utf-8')
+#                 print(base64_message)
                 #with open('/var/www/html/image/'+str(date1)+'.png', "rb") as img_file:
                     #my_string = base64.b64encode(img_file.read())
                     #print(my_string)
